@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/informacion"
+        android:title="@string/opcion_informacion"
+        android:icon="@drawable/ic_action_informacion"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/contacto"
+        android:title="@string/opcion_contacto"
+        android:icon="@drawable/ic_action_contacto"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/copyright"
+        android:title="@string/opcion_copyright"
+        android:icon="@drawable/ic_action_copyright"
+        app:showAsAction="ifRoom"/>
+</menu>

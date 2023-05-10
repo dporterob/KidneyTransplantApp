@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewGenerarGraficaSupervivenciaInjerto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".GenerarGraficaSupervivenciaInjerto">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16sp"
+        android:paddingTop="16sp"
+        android:paddingRight="16sp"
+        android:paddingBottom="16sp">
+
+        <TextView
+            android:id="@+id/textViewGenerarGraficaSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grafica_supervivencia_injerto"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/lineChartGenerarGraficaSupervivenciaInjerto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- MPAndroidChart: LineChart. -->
+        <!-- https://github.com/PhilJay/MPAndroidChart#more-examples-1 -->
+        <!-- El número de gráficas de líneas será proporcional al -->
+        <!-- número de receptores a estudiar en el modelo. -->
+        <!-- Se indicará en la gráfica la probabilidad de supervivencia -->
+        <!-- para 1, 3, 5, 7 y 10 años. -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChartGenerarGraficaSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/leyenda_grafica_supervivencia_injerto"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayoutGenerarGraficaSupervivenciaInjerto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewGenerarGraficaSupervivenciaInjerto" />
+
+        <!-- Tablas.                                                   -->
+        <!-- https://developer.android.com/guide/topics/ui/layout/grid -->
+        <TableLayout
+            android:id="@+id/tableLayoutGenerarGraficaSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:paddingTop="24sp"
+            android:paddingBottom="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineChartGenerarGraficaSupervivenciaInjerto">
+
+            <View
+                android:layout_height="4dip"
+                android:background="@color/black" />
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor1" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Icono"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/icono_receptor_tabla_generar_grafica_supervivencia_injerto" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Texto"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/receptor_1_tabla_generar_grafica_supervivencia_injerto" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor1Tiempo1" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo1Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_1_tabla_generar_grafica_supervivencia_injerto" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo1Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor1Tiempo3" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo3Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_3_tabla_generar_grafica_supervivencia_injerto" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo3Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor1Tiempo5" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo5Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_5_tabla_generar_grafica_supervivencia_injerto" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo5Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor1Tiempo7" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo7Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_7_tabla_generar_grafica_supervivencia_injerto" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo7Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor1Tiempo10" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo10Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_10_tabla_generar_grafica_supervivencia_injerto" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor1Tiempo10Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto" />
+            </TableRow>
+            <View
+                android:layout_height="4dip"
+                android:background="@color/black" />
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor2" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Icono"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/icono_receptor_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Texto"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/receptor_2_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor2Tiempo1" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo1Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_1_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo1Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor2Tiempo3" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo3Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_3_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo3Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor2Tiempo5" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo5Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_5_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo5Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor2Tiempo7" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo7Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_7_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo7Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor2Tiempo10" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo10Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_10_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor2Tiempo10Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <View
+                android:layout_height="4dip"
+                android:background="@color/black" />
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor3" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Icono"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/icono_receptor_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Texto"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/receptor_3_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor3Tiempo1" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo1Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_1_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo1Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor3Tiempo3" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo3Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_3_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo3Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor3Tiempo5" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo5Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_5_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo5Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor3Tiempo7" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo7Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_7_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo7Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor3Tiempo10" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo10Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_10_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor3Tiempo10Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <View
+                android:layout_height="4dip"
+                android:background="@color/black" />
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor4" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Icono"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/icono_receptor_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Texto"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/receptor_4_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor4Tiempo1" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo1Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_1_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo1Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor4Tiempo3" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo3Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_3_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo3Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor4Tiempo5" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo5Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_5_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo5Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor4Tiempo7" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo7Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_7_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo7Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor4Tiempo10" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo10Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_10_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor4Tiempo10Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <View
+                android:layout_height="4dip"
+                android:background="@color/black" />
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor5" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Icono"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/icono_receptor_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Texto"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/receptor_5_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor5Tiempo1" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo1Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_1_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo1Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor5Tiempo3" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo3Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_3_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo3Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor5Tiempo5" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo5Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_5_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo5Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor5Tiempo7" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo7Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_7_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo7Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRowGenerarGraficaSupervivenciaInjertoReceptor5Tiempo10" >
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo10Texto"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/tiempo_10_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/textViewGenerarGraficaSupervivenciaInjertoReceptor5Tiempo10Probabilidad"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:text="@string/probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto"
+                    android:visibility="gone"/>
+            </TableRow>
+            <View
+                android:layout_height="4dip"
+                android:background="@color/black" />
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

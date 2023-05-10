@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+    <!-- Esta animación atenúa las vistas.                                                   -->
+    <!--                                                                                     -->
+    <!-- translate:                                                                          -->
+    <!--    valor que desplaza o mueve la posición de la vista                               -->
+    <!--    (si la vista se desplaza vertical u horizontalmente, y en qué sentido).          -->
+    <!-- scale:                                                                              -->
+    <!--    valor de la diferencia en tamaño                                                 -->
+    <!--    (si la vista aumenta o disminuye su tamaño).                                     -->
+    <!-- alpha:                                                                              -->
+    <!--    valor de la opacidad; 0=transparente, 1=opaco.                                   -->
+    <!--    (si la vista se hace más o menos visible)o).                                     -->
+    <!--                                                                                     -->
+    <!--    android:fillAfter:                                                               -->
+    <!--        si está establecido a 'true', la transformación de la animación              -->
+    <!--        se aplica una vez la animación ha finalizado. El valor por defecto           -->
+    <!--        es 'false'.                                                                  -->
+    <!--                                                                                     -->
+    <!-- https://developer.android.com/guide/topics/graphics/prop-animation#views            -->
+    <!-- https://developer.android.com/guide/topics/resources/animation-resource#View        -->
+    <alpha
+        android:duration="80"
+        android:fromAlpha="0.2"
+        android:toAlpha="1" />
+</set>

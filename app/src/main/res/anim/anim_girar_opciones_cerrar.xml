@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+    <!-- Esta animación gira el botón de opciones el número de grados                     -->
+    <!-- indicado desde android:toDegrees hasta android:fromDegrees                       -->
+    <!--                                                                                  -->
+    <!-- rotate:                                                                          -->
+    <!--    animación que controla la rotación de un objeto.                              -->
+    <!--    La rotación tiene lugar en el plano X-Y.                                      -->
+    <!--    Es posible indicar los puntos a utilizar como centro                          -->
+    <!--    de la rotación, siendo el (0,0) el punto más arriba                           -->
+    <!--    a la izquierda. Si no se especifica, el punto de                              -->
+    <!--    rotación por defecto es el (0,0).                                             -->
+    <!--                                                                                  -->
+    <!-- Se comienza la animación desde el centro del boton flotante                      -->
+    <!-- atributos android:pivotX="50%" y android:pivotY="50%"                            -->
+    <!--                                                                                  -->
+    <!--    android:fillAfter:                                                            -->
+    <!--        si está establecido a 'true', la transformación de la animación           -->
+    <!--        se aplica una vez la animación ha finalizado. El valor por defecto        -->
+    <!--        es 'false'.                                                               -->
+    <!--                                                                                  -->
+    <!-- https://developer.android.com/guide/topics/graphics/prop-animation#views         -->
+    <!-- https://developer.android.com/guide/topics/resources/animation-resource#View     -->
+    <!-- https://developer.android.com/reference/android/view/animation/RotateAnimation   -->
+    <!-- https://developer.android.com/reference/android/graphics/drawable/RotateDrawable -->
+    <rotate
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fromDegrees="45"
+        android:toDegrees="0"
+        android:duration="80" />
+</set>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Tamaño del texto en las listas desplegables. -->
+<!-- android:textAppearance="?android:textAppearanceSmall" => 14sp -->
+<!-- android:textAppearance="?android:textAppearanceMedium" => 18sp -->
+<!-- android:textAppearance="?android:textAppearanceLarge" => 22sp -->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16sp"
+    android:paddingBottom="16sp"
+    android:paddingLeft="16sp"
+    android:paddingRight="16sp"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textAppearance="?android:textAppearanceLarge" >
+</TextView>

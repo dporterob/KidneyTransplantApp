@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+    <!-- Esta animación muestra los botones del menú de opciones.                         -->
+    <!--                                                                                  -->
+    <!-- translate:                                                                       -->
+    <!--    valor que desplaza o mueve la posición de la vista                            -->
+    <!--    (si la vista se desplaza vertical u horizontalmente, y en qué sentido).       -->
+    <!-- scale:                                                                           -->
+    <!--    valor de la diferencia en tamaño                                              -->
+    <!--    (si la vista aumenta o disminuye su tamaño).                                  -->
+    <!-- alpha:                                                                           -->
+    <!--    valor de la opacidad; 0=transparente, 1=opaco.                                -->
+    <!--    (si la vista se hace más o menos visible)o).                                  -->
+    <!--                                                                                  -->
+    <!--    android:fillAfter:                                                            -->
+    <!--        si está establecido a 'true', la transformación de la animación           -->
+    <!--        se aplica una vez la animación ha finalizado. El valor por defecto        -->
+    <!--        es 'false'.                                                               -->
+    <!--                                                                                  -->
+    <!-- https://developer.android.com/guide/topics/graphics/prop-animation#views         -->
+    <!-- https://developer.android.com/guide/topics/resources/animation-resource#View     -->
+    <!-- https://developer.android.com/reference/android/view/animation/RotateAnimation   -->
+    <!-- https://developer.android.com/reference/android/graphics/drawable/RotateDrawable -->
+    <translate
+        android:fromYDelta="100%"
+        android:toYDelta="0%"
+        android:duration="80" />
+    <scale
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fromXScale="0.9"
+        android:fromYScale="0.9"
+        android:toXScale="0.9"
+        android:toYScale="0.9" />
+    <alpha
+        android:duration="80"
+        android:fromAlpha="0"
+        android:toAlpha="100" />
+</set>

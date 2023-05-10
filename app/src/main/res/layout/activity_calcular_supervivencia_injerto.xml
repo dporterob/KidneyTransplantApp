@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewCalcularSupervivenciaInjerto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".CalcularSupervivenciaInjerto">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16sp"
+        android:paddingTop="16sp"
+        android:paddingRight="16sp"
+        android:paddingBottom="16sp">
+
+        <TextView
+            android:id="@+id/textViewModeloCalcularSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resultados_calcular_supervivencia_injerto"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewIndeterminateBarCalcularSupervivenciaInjerto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewIndeterminateBarCalcularSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/realizando_peticion_rest_calcular_supervivencia_injerto"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearProgressIndicatorCalcularSupervivenciaInjerto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewModeloCalcularSupervivenciaInjerto" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/linearProgressIndicatorCalcularSupervivenciaInjerto"
+            android:layout_width="360sp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indeterminateAnimationType="disjoint"
+            app:trackThickness="8dip"
+            app:indicatorColor="@array/linear_progress_indicator_colors"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewIndeterminateBarCalcularSupervivenciaInjerto" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearProgressIndicatorCalcularSupervivenciaInjerto" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_2_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor1Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor2Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_4_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor3Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor4Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosFormulario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewDatosFormulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_enviados_servicio_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosDonante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaInjertoReceptor5Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewDatosDonante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_donante_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadDonante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosFormulario" />
+
+        <TextView
+            android:id="@+id/textViewEdadDonante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_donante_edad_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAsistoliaIIDonante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosDonante" />
+
+        <TextView
+            android:id="@+id/textViewAsistoliaIIDonante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_donante_asistolia_II_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAsistoliaIIIDonante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadDonante" />
+
+        <TextView
+            android:id="@+id/textViewAsistoliaIIIDonante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_donante_asistolia_III_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAsistoliaIIDonante" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_1_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAsistoliaIIIDonante" />
+
+        <TextView
+            android:id="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_anticuerpos_citotoxicos_pretrasplante_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNumeroTrasplanteRenalReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewNumeroTrasplanteRenalReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_numero_trasplante_renal_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_2_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumeroTrasplanteRenalReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_anticuerpos_citotoxicos_pretrasplante_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNumeroTrasplanteRenalReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewNumeroTrasplanteRenalReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_numero_trasplante_renal_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_3_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumeroTrasplanteRenalReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_anticuerpos_citotoxicos_pretrasplante_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNumeroTrasplanteRenalReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor3" />
+
+
+        <TextView
+            android:id="@+id/textViewNumeroTrasplanteRenalReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_numero_trasplante_renal_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_4_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumeroTrasplanteRenalReceptor3" />
+
+
+        <TextView
+            android:id="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_anticuerpos_citotoxicos_pretrasplante_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNumeroTrasplanteRenalReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewNumeroTrasplanteRenalReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_numero_trasplante_renal_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_5_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumeroTrasplanteRenalReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_anticuerpos_citotoxicos_pretrasplante_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNumeroTrasplanteRenalReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor5" />
+
+        <TextView
+            android:id="@+id/textViewNumeroTrasplanteRenalReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_numero_trasplante_renal_calcular_supervivencia_injerto"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAnticuerposCitotoxicosPretrasplanteReceptor5" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/botonOpcionesCalcularSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="0sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:contentDescription="@string/opciones_menu_flotante_calcular_supervivencia_injerto"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_action_opciones"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonGenerarGraficaSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:backgroundTint="@color/aqua"
+            android:contentDescription="@string/opcion_descripcion_generar_grafica_menu_flotante_calcular_supervivencia_injerto"
+            android:tint="@color/white"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/botonOpcionesCalcularSupervivenciaInjerto"
+            app:layout_constraintEnd_toEndOf="@+id/botonOpcionesCalcularSupervivenciaInjerto"
+            app:srcCompat="@drawable/ic_action_generar_grafica" />
+
+        <TextView
+            android:id="@+id/textViewGenerarGraficaSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:text="@string/opcion_generar_grafica_menu_flotante_calcular_supervivencia_injerto"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/botonGenerarGraficaSupervivenciaInjerto"
+            app:layout_constraintEnd_toStartOf="@+id/botonGenerarGraficaSupervivenciaInjerto"
+            app:layout_constraintTop_toTopOf="@+id/botonGenerarGraficaSupervivenciaInjerto" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

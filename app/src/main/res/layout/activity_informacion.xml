@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewInformacion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".Informacion">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16sp"
+        android:paddingTop="16sp"
+        android:paddingRight="16sp"
+        android:paddingBottom="16sp">
+
+        <TextView
+            android:id="@+id/textViewInformacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/informacion_informacion"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstrucciones"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstrucciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instrucciones_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstruccion1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacion" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstruccion1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instruccion_1_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstruccion2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacionInstrucciones" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstruccion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instruccion_2_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstruccion3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacionInstruccion1" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstruccion3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instruccion_3_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstruccion4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacionInstruccion2" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstruccion4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instruccion_4_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstruccion5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacionInstruccion3" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstruccion5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instruccion_5_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewInformacionInstruccion6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacionInstruccion4" />
+
+        <TextView
+            android:id="@+id/textViewInformacionInstruccion6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/instruccion_6_informacion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewInformacionInstruccion5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

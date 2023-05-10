@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.tfg.apptrasplanterenal"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+/*
+ *   class file for android.view.ViewGroup not found
+ * javadoc: error - fatal error encountered: java.lang.NullPointerException
+ * javadoc: error - Please file a bug against the javadoc tool via the Java bug reporting page
+ * (http://bugreport.java.com) after checking the Bug Database (http://bugs.java.com)
+ * for duplicates. Include error messages and the following diagnostic in your report. Thank you.
+ *
+ *  Instrucciones:
+ *  1) Doble clic en el botón CTRL
+ *  2) Ejecutar en la terminal del IDE: gradle javadoc
+ *  3) JavaDoc generado en el directorio: \app\build\outputs\javadoc
+ *
+ * https://stackoverflow.com/questions/69563407/android-studio-javadoc-error-throws-a-nullpointerexception
+ */
+task javadoc(type: Javadoc) {
+
+    doFirst {
+        configurations.implementation
+                .filter { it.name.endsWith('.aar') }
+                .each { aar ->
+                    copy {
+                        from zipTree(aar)
+                        include "**/classes.jar"
+                        into "$buildDir/tmp/aarsToJars/${aar.name.replace('.aar', '')}/"
+                    }
+                }
+    }
+
+    configurations.implementation.setCanBeResolved(true)
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.implementation
+    classpath += fileTree(dir: "$buildDir/tmp/aarsToJars/")
+    destinationDir = file("${project.buildDir}/outputs/javadoc/")
+    failOnError false
+    exclude '**/BuildConfig.java'
+    exclude '**/R.java'
+}
+
+/*
+ * Configuración requerida en Gradle para MPAndroidChart.
+ *
+ * Configuración en settings.gradle:
+ *
+ * dependencyResolutionManagement {
+ *    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+ *    repositories {
+ *        maven {url 'https://jitpack.io'}
+ *    }
+ * }
+ *
+ * Configuración en build.graddle:
+ *
+ * dependencies {
+ *    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+ * }
+ *
+ *
+ * Fuente: https://github.com/PhilJay/MPAndroidChart#gradle-setup
+ * Nota: no debe incluirse en el fichero build.gradle la siguiente
+ * configuración:
+ *
+ * repositories {
+ *     maven { url 'https://jitpack.io' }
+ * }
+ *
+ * En su lugar, deberá añadirse jitpack.io como un repositorio en
+ * la configuración del fichero settings.gradle (tal y como se
+ * indica en 'Configuración en settings.gradle').
+ * En caso contrario, Android Studio muestra el error:
+ * 'Build was configured to prefer settings repositories over
+ * project repositories but repository 'maven' was added by
+ * build file 'build.gradle''
+ */
+/*
+ * Configuración requerida en Gradle para Volley.
+ *
+ * dependencies {
+ *    implementation 'com.android.volley:volley:1.2.1'
+ * }
+ *
+ * Volley is an HTTP library that makes networking for
+ * Android apps easier and most importantly, faster.
+ * Volley is available on https://github.com/google/volley
+ */
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.android.volley:volley:1.2.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

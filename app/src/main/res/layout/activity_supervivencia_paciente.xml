@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewModeloSupervivenciaPaciente"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".SupervivenciaPaciente">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16sp"
+        android:paddingTop="16sp"
+        android:paddingRight="16sp"
+        android:paddingBottom="16sp">
+
+        <TextView
+            android:id="@+id/textViewModeloSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modelo_supervivencia_paciente"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosDonanteSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewDatosDonanteSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_donante_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadDonanteSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewModeloSupervivenciaPaciente" />
+
+        <TextView
+            android:id="@+id/textViewEdadDonanteSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_donante_edad_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerEdadDonanteSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosDonanteSupervivenciaPaciente" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/spinnerEdadDonanteSupervivenciaPaciente"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/datos_donante_edad_descripcion_supervivencia_paciente"
+            android:minHeight="2sp"
+            android:scrollbarSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadDonanteSupervivenciaPaciente"
+            tools:layout_editor_absoluteX="184sp"
+            tools:layout_editor_absoluteY="129sp">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextViewSpinnerEdadDonanteSupervivenciaPaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewDatosReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_1_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerEdadDonanteSupervivenciaPaciente" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059SupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor4059SupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptorSupervivenciaPaciente" />
+
+        <!-- Se ha creado un interruptor personalizado con el texto "Sí"/"No". -->
+        <!-- La definición del thumb (pulgar) y el track (pista) están definidos en -->
+        <!-- ic_thumb.xml e ic_track.xml respectivamente. -->
+        <!-- Se añade texto al thumb, añadiendo el atributo app:showText="true". -->
+        <!-- Se personaliza el texto del interruptor para los estados de "apagado" y -->
+        <!-- "encendido" con los atributos android:textOn="" y android:textOff="" -->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor4059SupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_40_59_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_40_59_si_supervivencia_paciente"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60SupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60SupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor60SupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor4059SupervivenciaPaciente" />
+
+        <!-- Se ha creado un interruptor personalizado con el texto "Sí"/"No". -->
+        <!-- La definición del thumb (pulgar) y el track (pista) están definidos en -->
+        <!-- ic_thumb.xml e ic_track.xml respectivamente. -->
+        <!-- Se añade texto al thumb, añadiendo el atributo app:showText="true". -->
+        <!-- Se personaliza el texto del interruptor para los estados de "apagado" y -->
+        <!-- "encendido" con los atributos android:textOn="" y android:textOff="" -->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor60SupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_sexo_hombre_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_sexo_hombre_si_supervivencia_paciente"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60SupervivenciaPaciente"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <!-- Se ha creado un interruptor personalizado con el texto "Sí"/"No". -->
+        <!-- La definición del thumb (pulgar) y el track (pista) están definidos en -->
+        <!-- ic_thumb.xml e ic_track.xml respectivamente. -->
+        <!-- Se añade texto al thumb, añadiendo el atributo app:showText="true". -->
+        <!-- Se personaliza el texto del interruptor para los estados de "apagado" y -->
+        <!-- "encendido" con los atributos android:textOn="" y android:textOff="" -->
+
+        <!-- Se ha creado un interruptor personalizado con el texto "Sí"/"No". -->
+        <!-- La definición del thumb (pulgar) y el track (pista) están definidos en -->
+        <!-- ic_thumb.xml e ic_track.xml respectivamente. -->
+        <!-- Se añade texto al thumb, añadiendo el atributo app:showText="true". -->
+        <!-- Se personaliza el texto del interruptor para los estados de "apagado" y -->
+        <!-- "encendido" con los atributos android:textOn="" y android:textOff="" -->
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchSexoHombreReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_sexo_hombre_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_sexo_hombre_si_supervivencia_paciente"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor60SupervivenciaPaciente" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_diabetes_enfermedad_renal_primaria_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_diabetes_enfermedad_renal_primaria_si_supervivencia_paciente"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/datos_receptor_tiempo_dialisis_descripcion_supervivencia_paciente"
+            android:minHeight="2sp"
+            android:scrollbarSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente">
+
+            <EditText
+                android:id="@+id/editTextTiempoDialisisReceptorSupervivenciaPaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:visibility="gone"
+            android:text="@string/datos_receptor_2_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor2" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_40_59_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_40_59_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor2"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor2" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_60_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_60_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor2"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor2" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_sexo_hombre_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_sexo_hombre_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor2"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor2" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_diabetes_enfermedad_renal_primaria_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_diabetes_enfermedad_renal_primaria_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor2"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/datos_receptor_tiempo_dialisis_descripcion_supervivencia_paciente"
+            android:visibility="gone"
+            android:minHeight="2sp"
+            android:scrollbarSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor2">
+
+            <EditText
+                android:id="@+id/editTextTiempoDialisisReceptorSupervivenciaPaciente_Receptor2"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:visibility="gone"
+            android:text="@string/datos_receptor_3_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor2" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor3" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_40_59_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_40_59_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor3"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor3" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_60_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_60_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor3"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor3" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_sexo_hombre_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_sexo_hombre_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor3"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor3" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_diabetes_enfermedad_renal_primaria_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_diabetes_enfermedad_renal_primaria_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor3"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor3" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/datos_receptor_tiempo_dialisis_descripcion_supervivencia_paciente"
+            android:visibility="gone"
+            android:minHeight="2sp"
+            android:scrollbarSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor3">
+
+            <EditText
+                android:id="@+id/editTextTiempoDialisisReceptorSupervivenciaPaciente_Receptor3"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:visibility="gone"
+            android:text="@string/datos_receptor_4_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor3" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor4" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_40_59_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_40_59_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor4"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor4" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_60_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_60_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor4"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor4" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_sexo_hombre_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_sexo_hombre_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor4"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor4" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_diabetes_enfermedad_renal_primaria_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_diabetes_enfermedad_renal_primaria_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor4"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/datos_receptor_tiempo_dialisis_descripcion_supervivencia_paciente"
+            android:visibility="gone"
+            android:minHeight="2sp"
+            android:scrollbarSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor4">
+
+            <EditText
+                android:id="@+id/editTextTiempoDialisisReceptorSupervivenciaPaciente_Receptor4"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:visibility="gone"
+            android:text="@string/datos_receptor_5_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor4" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptorSupervivenciaPaciente_Receptor5" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_40_59_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_40_59_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059SupervivenciaPaciente_Receptor5"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor4059SupervivenciaPaciente_Receptor5" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_edad_60_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_edad_60_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60SupervivenciaPaciente_Receptor5"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchEdadReceptor60SupervivenciaPaciente_Receptor5" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_sexo_hombre_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_sexo_hombre_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptorSupervivenciaPaciente_Receptor5"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchSexoHombreReceptorSupervivenciaPaciente_Receptor5" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="@string/datos_receptor_diabetes_enfermedad_renal_primaria_no_supervivencia_paciente"
+            android:textOn="@string/datos_receptor_diabetes_enfermedad_renal_primaria_si_supervivencia_paciente"
+            android:visibility="gone"
+            android:thumb="@drawable/ic_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor5"
+            app:showText="true"
+            app:track="@drawable/ic_track" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_supervivencia_paciente"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchDiabetesEnfermedadRenalPrimariaReceptorSupervivenciaPaciente_Receptor5" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTiempoDialisisReceptorSupervivenciaPaciente_Receptor5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/datos_receptor_tiempo_dialisis_descripcion_supervivencia_paciente"
+            android:visibility="gone"
+            android:minHeight="2sp"
+            android:scrollbarSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptorSupervivenciaPaciente_Receptor5">
+
+            <EditText
+                android:id="@+id/editTextTiempoDialisisReceptorSupervivenciaPaciente_Receptor5"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/botonOpcionesSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="0sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:contentDescription="@string/opciones_menu_flotante_supervivencia_paciente"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_action_opciones"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonCalcularSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:backgroundTint="@color/green"
+            android:contentDescription="@string/opcion_descripcion_calcular_menu_flotante_supervivencia_paciente"
+            android:tint="@color/white"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/botonOpcionesSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="@+id/botonOpcionesSupervivenciaPaciente"
+            app:srcCompat="@drawable/ic_action_calcular" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:text="@string/opcion_calcular_menu_flotante_supervivencia_paciente"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/botonCalcularSupervivenciaPaciente"
+            app:layout_constraintEnd_toStartOf="@+id/botonCalcularSupervivenciaPaciente"
+            app:layout_constraintTop_toTopOf="@+id/botonCalcularSupervivenciaPaciente" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonNuevoReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:backgroundTint="@color/blue"
+            android:contentDescription="@string/opcion_descripcion_nuevo_receptor_menu_flotante_supervivencia_paciente"
+            android:tint="@color/white"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/botonCalcularSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="@+id/botonCalcularSupervivenciaPaciente"
+            app:srcCompat="@drawable/ic_action_nuevo_receptor" />
+
+        <TextView
+            android:id="@+id/textViewNuevoReceptorSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:text="@string/opcion_nuevo_receptor_menu_flotante_supervivencia_paciente"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/botonNuevoReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toStartOf="@+id/botonNuevoReceptorSupervivenciaPaciente"
+            app:layout_constraintTop_toTopOf="@+id/botonNuevoReceptorSupervivenciaPaciente" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonBorrarSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:backgroundTint="@color/red"
+            android:contentDescription="@string/opcion_descripcion_borrar_menu_flotante_supervivencia_paciente"
+            android:tint="@color/white"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/botonNuevoReceptorSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="@+id/botonNuevoReceptorSupervivenciaPaciente"
+            app:srcCompat="@drawable/ic_action_borrar" />
+
+        <TextView
+            android:id="@+id/textViewBorrarSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:text="@string/opcion_borrar_menu_flotante_supervivencia_paciente"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/botonBorrarSupervivenciaPaciente"
+            app:layout_constraintEnd_toStartOf="@+id/botonBorrarSupervivenciaPaciente"
+            app:layout_constraintTop_toTopOf="@+id/botonBorrarSupervivenciaPaciente" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewMainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16sp"
+        android:paddingBottom="16sp"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp" >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="400sp"
+            android:layout_height="360sp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitStart"
+
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kidney1280x1066" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seleccione_modelo_main"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/botonSupervivenciaInjerto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <Button
+            android:id="@+id/botonSupervivenciaInjerto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modelo_supervivencia_injerto_main"
+            app:layout_constraintBottom_toTopOf="@+id/botonSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/botonSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/modelo_supervivencia_paciente_main"
+            app:layout_constraintBottom_toTopOf="@+id/botonSalir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botonSupervivenciaInjerto" />
+
+        <Button
+            android:id="@+id/botonSalir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botonSupervivenciaPaciente" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

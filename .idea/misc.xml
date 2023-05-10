@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_borrar.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_calcular.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_contacto.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_copyright.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_generar_grafica.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_informacion.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_nuevo_receptor.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-anydpi/ic_action_opciones.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.4625" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable/ic_thumb.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/drawable/ic_track.xml" value="0.1955" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_calcular_supervivencia_injerto.xml" value="0.5" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_calcular_supervivencia_paciente.xml" value="0.5" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_contacto.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_copyright.xml" value="0.5" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_generar_grafica_supervivencia_injerto.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_generar_grafica_supervivencia_paciente.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_informacion.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_main.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_supervivencia_injerto.xml" value="0.5" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/activity_supervivencia_paciente.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/list_opciones.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/view_copyright.xml" value="0.5546875" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/layout/view_gdpr.xml" value="0.5" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/menu/menu.xml" value="0.1574074074074074" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.317" />
+        <entry key="..\:/Users/sweet/AndroidStudioProjects/AppTrasplanteRenal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.317" />
+      </map>
+    </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/Trabajo Fin Grado/_CódigoTFG/AppAndroidREST/JavadocAppTrasplanteRenal" />
+    <option name="OPTION_SCOPE" value="private" />
+    <option name="OTHER_OPTIONS" value="-encoding utf8 -docencoding utf8 -charset utf8" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

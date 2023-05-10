@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewCopyright"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".Copyright">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16sp"
+        android:paddingTop="16sp"
+        android:paddingRight="16sp"
+        android:paddingBottom="16sp">
+
+        <TextView
+            android:id="@+id/textViewCopyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/copyright_copyright"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightTareas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightTareas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/tareas_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightTareasMensaje"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyright" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightTareasMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/tareas_mensaje_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightAlumno"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightTareas" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightAlumno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/alumno_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightAlumnoMensaje"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightTareasMensaje" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightAlumnoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/alumno_mensaje_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightTutores"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightAlumno" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightTutores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/tutores_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightTutoresMensaje"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightAlumnoMensaje" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightTutoresMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/tutores_mensaje_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaPixabay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightTutores" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaPixabay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/licencia_pixabay_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaPixabayWeb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightTutoresMensaje" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaPixabayWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_pixabay_web_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaPixabayEnlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaPixabay" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaPixabayEnlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_pixabay_enlace_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaIconos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaPixabayWeb" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/licencia_iconos_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaIconosWeb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaPixabayEnlace" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaIconosWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_iconos_web_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaIconosEnlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaIconos" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaIconosEnlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_iconos_enlace_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaIconosVerDeclaracion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaIconosWeb" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaIconosVerDeclaracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="none"
+            android:padding="10sp"
+            android:text="@string/licencia_iconos_ver_declaracion_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaMPAndroidChart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaIconosEnlace" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaMPAndroidChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/licencia_mpAndroidChart_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaMPAndroidChartWeb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaIconosVerDeclaracion" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaMPAndroidChartWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_mpAndroidChart_web_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaMPAndroidChartEnlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaMPAndroidChart" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaMPAndroidChartEnlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_mpAndroidChart_enlace_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaMPAndroidChartVerDeclaracion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaMPAndroidChartWeb" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaMPAndroidChartVerDeclaracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="none"
+            android:padding="10sp"
+            android:text="@string/licencia_mpAndroidChart_ver_declaracion_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaVolley"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaMPAndroidChartEnlace" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaVolley"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/licencia_volley_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaVolleyWeb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaMPAndroidChartVerDeclaracion" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaVolleyWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_volley_web_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaVolleyEnlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaVolley" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaVolleyEnlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:padding="10sp"
+            android:text="@string/licencia_volley_enlace_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCopyrightLicenciaVolleyVerDeclaracion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.419"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaVolleyWeb" />
+
+        <TextView
+            android:id="@+id/textViewCopyrightLicenciaVolleyVerDeclaracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="none"
+            android:padding="10sp"
+            android:text="@string/licencia_volley_ver_declaracion_copyright"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCopyrightLicenciaVolleyEnlace" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

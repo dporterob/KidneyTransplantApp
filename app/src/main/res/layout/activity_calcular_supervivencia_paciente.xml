@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewCalcularSupervivenciaPaciente"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false"
+    tools:context=".CalcularSupervivenciaPaciente">
+
+    <!-- Se hace uso de un conjunto de vistas desplazables -->
+    <!-- verticalmente (ScrollView).  -->
+    <!-- El layout que contiene las vistas es de tipo -->
+    <!-- ConstraintLayout. -->
+    <!-- ScrollView permite la correcta representación -->
+    <!-- de las vistas definidas en el ConstraintLayout -->
+    <!-- en dispositivos cuyo tamaño de pantalla es -->
+    <!-- pequeño (menor a 4 pulgadas)  -->
+    <!-- o en dispositivos donde se haga uso de la  -->
+    <!-- modo pantalla dividida (split-screen mode).  -->
+    <!-- https://developer.android.com/guide/practices/screens_support -->
+
+    <!-- Relleno de 16sp arriba, abajo, izquierda y derecha. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16sp"
+        android:paddingTop="16sp"
+        android:paddingRight="16sp"
+        android:paddingBottom="16sp">
+
+        <TextView
+            android:id="@+id/textViewModeloCalcularSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resultados_calcular_supervivencia_paciente"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewIndeterminateBarCalcularSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewIndeterminateBarCalcularSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/realizando_peticion_rest_calcular_supervivencia_paciente"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearProgressIndicatorCalcularSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewModeloCalcularSupervivenciaPaciente" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/linearProgressIndicatorCalcularSupervivenciaPaciente"
+            android:layout_width="360sp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indeterminateAnimationType="disjoint"
+            app:trackThickness="8dip"
+            app:indicatorColor="@array/linear_progress_indicator_colors"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewIndeterminateBarCalcularSupervivenciaPaciente" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearProgressIndicatorCalcularSupervivenciaPaciente" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_2_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor1Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor2Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_4_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor3Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/receptor_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor4Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo1Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo1Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo1" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo3Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo1Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo3Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo3" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo5Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo3Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo5Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo5" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_7_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo7Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo5Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo7Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo7" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_10_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo10Probabilidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo7Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo10Probabilidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/probabilidad_0_00_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosFormulario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo10" />
+
+        <TextView
+            android:id="@+id/textViewDatosFormulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_enviados_servicio_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosDonante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCalcularSupervivenciaPacienteReceptor5Tiempo10Probabilidad" />
+
+        <TextView
+            android:id="@+id/textViewDatosDonante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_donante_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadDonante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosFormulario" />
+
+        <TextView
+            android:id="@+id/textViewEdadDonante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_donante_edad_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosDonante" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_1_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadDonante" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059_1" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60_1" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptor1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_2_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptor1" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059_2" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60_2" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptor2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor2" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_3_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptor2" />
+
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059_3" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60_3" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_4_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptor3" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059_4" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60_4" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptor4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDatosReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewDatosReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:text="@string/datos_receptor_5_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor4059_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTiempoDialisisReceptor4" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor4059_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_40_59_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewEdadReceptor60_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDatosReceptor5" />
+
+        <TextView
+            android:id="@+id/textViewEdadReceptor60_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_edad_60_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSexoHombreReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor4059_5" />
+
+        <TextView
+            android:id="@+id/textViewSexoHombreReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_sexo_hombre_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEdadReceptor60_5" />
+
+        <TextView
+            android:id="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_diabetes_enfermedad_renal_primaria_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTiempoDialisisReceptor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSexoHombreReceptor5" />
+
+        <TextView
+            android:id="@+id/textViewTiempoDialisisReceptor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_receptor_tiempo_dialisis_calcular_supervivencia_paciente"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDiabetesEnfermedadRenalPrimariaReceptor5" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/botonOpcionesCalcularSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="0sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:contentDescription="@string/opciones_menu_flotante_calcular_supervivencia_paciente"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_action_opciones"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonGenerarGraficaSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:backgroundTint="@color/aqua"
+            android:contentDescription="@string/opcion_descripcion_generar_grafica_menu_flotante_calcular_supervivencia_paciente"
+            android:tint="@color/white"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/botonOpcionesCalcularSupervivenciaPaciente"
+            app:layout_constraintEnd_toEndOf="@+id/botonOpcionesCalcularSupervivenciaPaciente"
+            app:srcCompat="@drawable/ic_action_generar_grafica" />
+
+        <TextView
+            android:id="@+id/textViewGenerarGraficaSupervivenciaPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:text="@string/opcion_generar_grafica_menu_flotante_calcular_supervivencia_paciente"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/botonGenerarGraficaSupervivenciaPaciente"
+            app:layout_constraintEnd_toStartOf="@+id/botonGenerarGraficaSupervivenciaPaciente"
+            app:layout_constraintTop_toTopOf="@+id/botonGenerarGraficaSupervivenciaPaciente" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

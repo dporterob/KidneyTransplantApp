@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="linear_progress_indicator_colors">
+        <item>@color/aqua</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,361 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Strings de la actividad activity_calcular_supervivencia_injerto.xml  -->
+    <string name="resultados_recibidos_correctamente_calcular_supervivencia_injerto">
+        Results received successfully.
+    </string>
+    <string name="no_conectado_internet_calcular_supervivencia_injerto">
+        Not connected to the Internet: turn on WiFi or mobile data.
+    </string>
+    <string name="servicio_no_disponible_calcular_supervivencia_injerto">
+        The service is not available, please contact the administrator for more information.
+    </string>
+    <string name="codigo_error_http_calcular_supervivencia_injerto">
+        Error code: HTTP %1$s
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_calcular_supervivencia_injerto.xml  -->
+    <string name="resultados_calcular_supervivencia_injerto">Graft survival outcomes.</string>
+    <string name="realizando_peticion_rest_calcular_supervivencia_injerto">Making REST request…</string>
+    <string name="receptor_1_calcular_supervivencia_injerto">Recipient 1.</string>
+    <string name="receptor_2_calcular_supervivencia_injerto">Recipient 2.</string>
+    <string name="receptor_3_calcular_supervivencia_injerto">Recipient 3.</string>
+    <string name="receptor_4_calcular_supervivencia_injerto">Recipient 4.</string>
+    <string name="receptor_5_calcular_supervivencia_injerto">Recipient 5.</string>
+    <string name="tiempo_1_calcular_supervivencia_injerto">1 year:</string>
+    <string name="tiempo_3_calcular_supervivencia_injerto">3 years:</string>
+    <string name="tiempo_5_calcular_supervivencia_injerto">5 years:</string>
+    <string name="tiempo_7_calcular_supervivencia_injerto">7 years:</string>
+    <string name="tiempo_10_calcular_supervivencia_injerto">10 years:</string>
+    <string name="probabilidad_0_00_calcular_supervivencia_injerto">0.00 %</string>
+    <string name="datos_enviados_servicio_calcular_supervivencia_injerto">Data sent to the REST service for model calculation.</string>
+    <string name="datos_donante_calcular_supervivencia_injerto">Donor data.</string>
+    <string name="datos_donante_edad_calcular_supervivencia_injerto">Donor age: No data.</string>
+    <string name="datos_donante_asistolia_II_calcular_supervivencia_injerto">Donor asystole II: No data.</string>
+    <string name="datos_donante_asistolia_III_calcular_supervivencia_injerto">Donor asystole III: No data.</string>
+    <string name="datos_receptor_1_calcular_supervivencia_injerto">Recipient data.</string>
+    <string name="datos_receptor_2_calcular_supervivencia_injerto">Recipient data 2.</string>
+    <string name="datos_receptor_3_calcular_supervivencia_injerto">Recipient data 3.</string>
+    <string name="datos_receptor_4_calcular_supervivencia_injerto">Recipient data 4.</string>
+    <string name="datos_receptor_5_calcular_supervivencia_injerto">Recipient data 5.</string>
+    <string name="datos_receptor_anticuerpos_citotoxicos_pretrasplante_calcular_supervivencia_injerto">Pre-transplant cytotoxic\nantibodies: No data.</string>
+    <string name="datos_receptor_numero_trasplante_renal_calcular_supervivencia_injerto">Kidney transplant number: No data.</string>
+    <string name="opciones_menu_flotante_calcular_supervivencia_injerto">Options</string>
+    <string name="opcion_generar_grafica_menu_flotante_calcular_supervivencia_injerto">Generate graph</string>
+    <string name="opcion_descripcion_generar_grafica_menu_flotante_calcular_supervivencia_injerto">Generate graph</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_calcular_supervivencia_paciente.xml  -->
+    <string name="resultados_recibidos_correctamente_calcular_supervivencia_paciente">Results received successfully.</string>
+    <string name="no_conectado_internet_calcular_supervivencia_paciente">Not connected to the Internet: turn on WiFi or mobile data.</string>
+    <string name="servicio_no_disponible_calcular_supervivencia_paciente">The service is not available, please contact the administrator for more information.</string>
+    <string name="codigo_error_http_calcular_supervivencia_paciente">Error code: HTTP %1$s</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_calcular_supervivencia_paciente.xml  -->
+    <string name="resultados_calcular_supervivencia_paciente">Patient survival outcomes.</string>
+    <string name="realizando_peticion_rest_calcular_supervivencia_paciente">Making REST request…</string>
+    <string name="receptor_1_calcular_supervivencia_paciente">Recipient 1.</string>
+    <string name="receptor_2_calcular_supervivencia_paciente">Recipient 2.</string>
+    <string name="receptor_3_calcular_supervivencia_paciente">Recipient 3.</string>
+    <string name="receptor_4_calcular_supervivencia_paciente">Recipient 4.</string>
+    <string name="receptor_5_calcular_supervivencia_paciente">Recipient 5.</string>
+    <string name="tiempo_1_calcular_supervivencia_paciente">1 year:</string>
+    <string name="tiempo_3_calcular_supervivencia_paciente">3 years:</string>
+    <string name="tiempo_5_calcular_supervivencia_paciente">5 years:</string>
+    <string name="tiempo_7_calcular_supervivencia_paciente">7 years:</string>
+    <string name="tiempo_10_calcular_supervivencia_paciente">10 years:</string>
+    <string name="probabilidad_0_00_calcular_supervivencia_paciente">0.00 %</string>
+    <string name="datos_enviados_servicio_calcular_supervivencia_paciente">Data sent to the REST service for model calculation.</string>
+    <string name="datos_donante_calcular_supervivencia_paciente">Donor data.</string>
+    <string name="datos_donante_edad_calcular_supervivencia_paciente">Donor age: No data.</string>
+    <string name="datos_receptor_1_calcular_supervivencia_paciente">Recipient data.</string>
+    <string name="datos_receptor_2_calcular_supervivencia_paciente">Recipient data 2.</string>
+    <string name="datos_receptor_3_calcular_supervivencia_paciente">Recipient data 3.</string>
+    <string name="datos_receptor_4_calcular_supervivencia_paciente">Recipient data 4.</string>
+    <string name="datos_receptor_5_calcular_supervivencia_paciente">Recipient data 5.</string>
+    <string name="datos_receptor_edad_40_59_calcular_supervivencia_paciente">Age 40–59: No data.</string>
+    <string name="datos_receptor_edad_60_calcular_supervivencia_paciente">Age >60: No data.</string>
+    <string name="datos_receptor_sexo_hombre_calcular_supervivencia_paciente">Male sex: No data.</string>
+    <string name="datos_receptor_diabetes_enfermedad_renal_primaria_calcular_supervivencia_paciente">Diabetes as primary kidney\ndisease: No data.</string>
+    <string name="datos_receptor_tiempo_dialisis_calcular_supervivencia_paciente">Dialysis time: No data.</string>
+    <string name="opciones_menu_flotante_calcular_supervivencia_paciente">Options</string>
+    <string name="opcion_generar_grafica_menu_flotante_calcular_supervivencia_paciente">Generate graph</string>
+    <string name="opcion_descripcion_generar_grafica_menu_flotante_calcular_supervivencia_paciente">Generate graph</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_contacto.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_contacto.xml  -->
+    <string name="contacto_contacto"><u>Contact</u></string>
+    <string name="mensaje_contacto">
+        <p>If you had any incident, you can contact the administrator at the following email address:</p>
+    </string>
+    <string name="email_contacto">
+        <p>user@us.es</p>
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_copyright.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_copyright.xml  -->
+    <string name="copyright_copyright"><u>Copyright</u></string>
+    <string name="tareas_copyright">
+        <p><u>Completed tasks:</u></p>
+    </string>
+    <string name="tareas_mensaje_copyright">
+        <p>Kidney Transplant App.</p>
+        <p>\nKidney Transplant REST Service.</p>
+    </string>
+    <string name="alumno_copyright">
+        <p><u>Author:</u></p>
+    </string>
+    <string name="alumno_mensaje_copyright">
+        <p>Daniel Portero Barreña.</p>
+    </string>
+    <string name="tutores_copyright">
+        <p><u>Tutors:</u></p>
+    </string>
+    <string name="tutores_mensaje_copyright">
+        <p>Jorge Calvillo Arbizu.</p>
+        <p>\nMiguel Ángel Pérez Valdivia.</p>
+    </string>
+    <string name="licencia_pixabay_copyright">
+        <p><u>Kidney Transplant App image:</u></p>
+    </string>
+    <string name="licencia_pixabay_web_copyright">
+        <p>https://pixabay.com/illustrations/kidney-anatomy-body-part-medical-6694025</p>
+    </string>
+    <string name="licencia_pixabay_enlace_copyright">
+        <p>https://pixabay.com/service/license</p>
+    </string>
+    <string name="licencia_iconos_copyright">
+        <p><u>Kidney Transplant App icons:</u></p>
+    </string>
+    <string name="licencia_iconos_web_copyright">
+        <p>https://google.github.io/material-design-icons</p>
+    </string>
+    <string name="licencia_iconos_enlace_copyright">
+        <p>https://www.apache.org/licenses/LICENSE-2.0</p>
+    </string>
+    <string name="licencia_iconos_ver_declaracion_copyright">
+        <p> Click me to see the statement.</p>
+    </string>
+    <string name="licencia_mpAndroidChart_copyright">
+        <p><u>MPAndroidChart library:</u></p>
+    </string>
+    <string name="licencia_mpAndroidChart_web_copyright">
+        <p>https://github.com/PhilJay/MPAndroidChart</p>
+    </string>
+    <string name="licencia_mpAndroidChart_enlace_copyright">
+        <p>https://www.apache.org/licenses/LICENSE-2.0</p>
+    </string>
+    <string name="licencia_mpAndroidChart_ver_declaracion_copyright">
+        <p> Click me to see the statement.</p>
+    </string>
+    <string name="licencia_volley_copyright">
+        <p><u>Volley library:</u></p>
+    </string>
+    <string name="licencia_volley_web_copyright">
+        <p>https://github.com/google/volley</p>
+    </string>
+    <string name="licencia_volley_enlace_copyright">
+        <p>https://www.apache.org/licenses/LICENSE-2.0</p>
+    </string>
+    <string name="licencia_volley_ver_declaracion_copyright">
+        <p> Click me to see the statement.</p>
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_generar_grafica_supervivencia_injerto.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_generar_grafica_supervivencia_injerto.xml  -->
+    <string name="grafica_supervivencia_injerto">Graft survival graph.</string>
+    <string name="leyenda_grafica_supervivencia_injerto">Graft survival graph.</string>
+    <string name="icono_receptor_tabla_generar_grafica_supervivencia_injerto">-</string>
+    <string name="receptor_1_tabla_generar_grafica_supervivencia_injerto">Recipient 1.</string>
+    <string name="receptor_2_tabla_generar_grafica_supervivencia_injerto">Recipient 2.</string>
+    <string name="receptor_3_tabla_generar_grafica_supervivencia_injerto">Recipient 3.</string>
+    <string name="receptor_4_tabla_generar_grafica_supervivencia_injerto">Recipient 4.</string>
+    <string name="receptor_5_tabla_generar_grafica_supervivencia_injerto">Recipient 5.</string>
+    <string name="tiempo_1_tabla_generar_grafica_supervivencia_injerto">1 year:</string>
+    <string name="tiempo_3_tabla_generar_grafica_supervivencia_injerto">3 years:</string>
+    <string name="tiempo_5_tabla_generar_grafica_supervivencia_injerto">5 years:</string>
+    <string name="tiempo_7_tabla_generar_grafica_supervivencia_injerto">7 years:</string>
+    <string name="tiempo_10_tabla_generar_grafica_supervivencia_injerto">10 years:</string>
+    <string name="probabilidad_0_00_tabla_generar_grafica_supervivencia_injerto">0.00 %</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_generar_grafica_supervivencia_paciente.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_generar_grafica_supervivencia_paciente.xml  -->
+    <string name="grafica_supervivencia_paciente">Patient survival graph.</string>
+    <string name="leyenda_grafica_supervivencia_paciente">Patient survival graph.</string>
+    <string name="icono_receptor_tabla_generar_grafica_supervivencia_paciente">-</string>
+    <string name="receptor_1_tabla_generar_grafica_supervivencia_paciente">Recipient 1.</string>
+    <string name="receptor_2_tabla_generar_grafica_supervivencia_paciente">Recipient 2.</string>
+    <string name="receptor_3_tabla_generar_grafica_supervivencia_paciente">Recipient 3.</string>
+    <string name="receptor_4_tabla_generar_grafica_supervivencia_paciente">Recipient 4.</string>
+    <string name="receptor_5_tabla_generar_grafica_supervivencia_paciente">Recipient 5.</string>
+    <string name="tiempo_1_tabla_generar_grafica_supervivencia_paciente">1 year:</string>
+    <string name="tiempo_3_tabla_generar_grafica_supervivencia_paciente">3 years:</string>
+    <string name="tiempo_5_tabla_generar_grafica_supervivencia_paciente">5 years:</string>
+    <string name="tiempo_7_tabla_generar_grafica_supervivencia_paciente">7 years:</string>
+    <string name="tiempo_10_tabla_generar_grafica_supervivencia_paciente">10 years:</string>
+    <string name="probabilidad_0_00_tabla_generar_grafica_supervivencia_paciente">0.00 %</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_informacion.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_informacion.xml  -->
+    <string name="informacion_informacion"><u>Information</u></string>
+    <string name="instrucciones_informacion">
+        <p><u>Instructions:</u></p>
+    </string>
+    <string name="instruccion_1_informacion">
+        <p>1) Select a model: \"Graft survival\" o \"Patient survival\".</p>
+    </string>
+    <string name="instruccion_2_informacion">
+        <p>2) If you are going to perform a comparison with more than one recipient: click the circle button \"+\" and, then, click the circular button \"New recipient\".</p>
+    </string>
+    <string name="instruccion_3_informacion">
+        <p>3) Enter the details of the donor and recipient (or recipients).</p>
+    </string>
+    <string name="instruccion_4_informacion">
+        <p>4) If you want to clear the form fields: click the circular button \"+\" and, then, click the circular button \"Delete\".</p>
+    </string>
+    <string name="instruccion_5_informacion">
+        <p>5) When you have entered all the data: click the circular button \"+\" and, then, click the circular button \"Calculate\".</p>
+    </string>
+    <string name="instruccion_6_informacion">
+        <p>6) In the results window: click the circular button \"+\" and, then, click the circular button \"Generate graph\". You can see the survival evolution from year 1 to year 10 (you can swipe down vertically to see the corresponding probabilities with the points on the graph). </p>
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_main.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_main.xml  -->
+    <string name="app_name">Kidney Transplant App</string>
+    <string name="seleccione_modelo_main">Select a model:</string>
+    <string name="modelo_supervivencia_injerto_main">Graft survival</string>
+    <string name="modelo_supervivencia_paciente_main">Patient survival</string>
+    <string name="salir_main">Exit</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_supervivencia_injerto.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_supervivencia_injerto.xml  -->
+    <string name="modelo_supervivencia_injerto">Graft survival model (censored to death).</string>
+    <string name="datos_donante_supervivencia_injerto">Donor data:</string>
+    <string name="datos_donante_edad_supervivencia_injerto">Age</string>
+    <string name="datos_donante_edad_descripcion_supervivencia_injerto">Donor age (in years)</string>
+    <string name="datos_donante_asistolia_II_supervivencia_injerto">Asystole II</string>
+    <string name="datos_donante_asistolia_III_supervivencia_injerto">Asystole III</string>
+    <string name="datos_donante_asistolia_si_supervivencia_injerto">Yes</string>
+    <string name="datos_donante_asistolia_no_supervivencia_injerto">No</string>
+    <string name="datos_receptor_1_supervivencia_injerto">Recipient data:</string>
+    <string name="datos_receptor_2_supervivencia_injerto">Recipient 2 data:</string>
+    <string name="datos_receptor_3_supervivencia_injerto">Recipient 3 data:</string>
+    <string name="datos_receptor_4_supervivencia_injerto">Recipient 4 data:</string>
+    <string name="datos_receptor_5_supervivencia_injerto">Recipient 5 data:</string>A
+    <string name="datos_receptor_anticuerpos_citotoxicos_pretrasplante_supervivencia_injerto">Cytotoxic antibodies</string>
+    <string name="datos_receptor_anticuerpos_citotoxicos_pretrasplante_descripcion_supervivencia_injerto">Recipient cytotoxic antibodies (in %)</string>
+    <string name="datos_receptor_numero_trasplante_renal_supervivencia_injerto">Kidney transplant number</string>
+    <string name="datos_receptor_numero_trasplante_renal_descripcion_supervivencia_injerto">Recipient kidney transplant (between 1 and 4)</string>
+    <string name="opciones_menu_flotante_supervivencia_injerto">Options</string>
+    <string name="opcion_calcular_menu_flotante_supervivencia_injerto">Calculate</string>
+    <string name="opcion_descripcion_calcular_menu_flotante_supervivencia_injerto">Calculate</string>
+    <string name="opcion_nuevo_receptor_menu_flotante_supervivencia_injerto">New recipient</string>
+    <string name="opcion_descripcion_nuevo_receptor_menu_flotante_supervivencia_injerto">New recipient</string>
+    <string name="opcion_borrar_menu_flotante_supervivencia_injerto">Delete</string>
+    <string name="opcion_descripcion_borrar_menu_flotante_supervivencia_injerto">Delete</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings de la actividad activity_supervivencia_paciente.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout activity_supervivencia_paciente.xml  -->
+    <string name="modelo_supervivencia_paciente">Patient survival model.</string>
+    <string name="datos_donante_supervivencia_paciente">Donor data:</string>
+    <string name="datos_donante_edad_supervivencia_paciente">Age</string>
+    <string name="datos_donante_edad_descripcion_supervivencia_paciente">Donor age (in years)</string>
+    <string name="datos_receptor_1_supervivencia_paciente">Recipient data:</string>
+    <string name="datos_receptor_2_supervivencia_paciente">Recipient 2 data:</string>
+    <string name="datos_receptor_3_supervivencia_paciente">Recipient 3 data:</string>
+    <string name="datos_receptor_4_supervivencia_paciente">Recipient 4 data:</string>
+    <string name="datos_receptor_5_supervivencia_paciente">Recipient 5 data:</string>
+    <string name="datos_receptor_edad_40_59_supervivencia_paciente">Age 40–59</string>
+    <string name="datos_receptor_edad_40_59_si_supervivencia_paciente">Yes</string>
+    <string name="datos_receptor_edad_40_59_no_supervivencia_paciente">No</string>
+    <string name="datos_receptor_edad_60_supervivencia_paciente">Age >60</string>
+    <string name="datos_receptor_edad_60_si_supervivencia_paciente">Yes</string>
+    <string name="datos_receptor_edad_60_no_supervivencia_paciente">No</string>
+    <string name="datos_receptor_sexo_hombre_supervivencia_paciente">Male sex</string>
+    <string name="datos_receptor_sexo_hombre_si_supervivencia_paciente">Yes</string>
+    <string name="datos_receptor_sexo_hombre_no_supervivencia_paciente">No</string>
+    <string name="datos_receptor_diabetes_enfermedad_renal_primaria_supervivencia_paciente">Diabetes as primary kidney disease</string>
+    <string name="datos_receptor_diabetes_enfermedad_renal_primaria_si_supervivencia_paciente">Yes</string>
+    <string name="datos_receptor_diabetes_enfermedad_renal_primaria_no_supervivencia_paciente">No</string>
+    <string name="datos_receptor_tiempo_dialisis_supervivencia_paciente">Dialysis time</string>
+    <string name="datos_receptor_tiempo_dialisis_descripcion_supervivencia_paciente">Recipient dialysis time (in days)</string>
+    <string name="opciones_menu_flotante_supervivencia_paciente">Options</string>
+    <string name="opcion_calcular_menu_flotante_supervivencia_paciente">Calculate</string>
+    <string name="opcion_descripcion_calcular_menu_flotante_supervivencia_paciente">Calculate</string>
+    <string name="opcion_nuevo_receptor_menu_flotante_supervivencia_paciente">New recipient</string>
+    <string name="opcion_descripcion_nuevo_receptor_menu_flotante_supervivencia_paciente">New recipient</string>
+    <string name="opcion_borrar_menu_flotante_supervivencia_paciente">Delete</string>
+    <string name="opcion_descripcion_borrar_menu_flotante_supervivencia_paciente">Delete</string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout list_opciones.xml  -->
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout view_copyright.xml  -->
+    <string name="licencia_declaracion_1_de_4_view_copyright">
+        <p>Copyright 2023 Daniel Portero Barreña, Jorge Calvillo Arbizu, Miguel Ángel Pérez Valdivia.</p>
+    </string>
+    <string name="licencia_declaracion_2_de_4_view_copyright">
+        <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
+    </string>
+    <string name="licencia_declaracion_3_de_4_view_copyright">
+        <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+    </string>
+    <string name="licencia_declaracion_4_de_4_view_copyright">
+        <p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout view_gdpr.xml  -->
+    <string name="gdpr_1_de_4_view_gdpr">
+        <p><u>Kidney Transplant App.</u></p>
+    </string>
+    <string name="gdpr_2_de_4_view_gdpr">
+        <p>The application sends the data entered in the forms to a service to process the request. These data will NOT be stored.</p>
+    </string>
+    <string name="gdpr_3_de_4_view_gdpr">
+        <p>However, in order to ensure the proper functioning of the system and prevent misuse, some metadata related to the request CAN be stored (for example, the version of the operating system, the model of the device, and the IP address of the device, among other metadata).</p>
+    </string>
+    <string name="gdpr_4_de_4_view_gdpr">
+        <p>By using the application, you accept the conditions set forth above.</p>
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+
+    <!-- Strings del layout menu.xml  -->
+    <string name="opcion_informacion">
+        Information
+    </string>
+    <string name="opcion_contacto">
+        Contact
+    </string>
+    <string name="opcion_copyright">
+        Copyright
+    </string>
+    <!-- *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** -->
+</resources>
