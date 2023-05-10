@@ -6,6 +6,18 @@ This application uses an API to obtain graft survival and patient survival resul
 Please note that the REST service that runs in conjunction with this application, while fully developed, is not currently running. As a consequence, all the functionalities of the application are not currently available. 
 
 ## Sreenshots.
+| Kidney Transplant App  |
+| ------------- |
+| <img src="screenshots/Screenshot1_KidneyTransplantApp.jpg" width="200">  |
+
+| Graft survival model: No Data | Graft survival model: Data | Graft survival model: Results |
+| ------------- | ------------- | ------------- |
+|<img src="screenshots/Screenshot2_GraftSurvivalModel_5Recipients_NoData.jpg" width="200"> | <img src="screenshots/Screenshot3_GraftSurvivalModel_5Recipients_Data.jpg" width="200"> |   <img src="screenshots/Screenshot4_GraftSurvivalModel_5Recipients_Results.jpg" width="200"> |
+
+
+| Patient survival model: No Data | Patient survival model: Data | Patient survival model: Results |
+| ------------- | ------------- | ------------- |
+|<img src="screenshots/Screenshot5_PatientSurvivalModel_5Recipients_NoData.jpg" width="200"> | <img src="screenshots/Screenshot6_PatientSurvivalModel_5Recipients_Data.jpg" width="200"> |   <img src="screenshots/Screenshot7_PatientSurvivalModel_5Recipients_Results.jpg" width="200"> |
 
 ## Licenses.
 #### Kidney Transplant App (Android application) license:
